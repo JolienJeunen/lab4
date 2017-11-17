@@ -1,0 +1,72 @@
+---
+title: "Lab4"
+author: "Jolien Jeunen"
+date: "17 november 2017"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Our Location
+```{r echo = FALSE, warning = FALSE}
+
+
+library(leaflet)
+
+BUSScon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/business.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+EDUcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/education.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+HEALTHcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/healthcare.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+ITcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/it.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+MADcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/mad.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+MEDTOUcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/media_and_tourism.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+MUSICcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/music.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+SOCWOcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/social_work.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+TECHcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/tech.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+
+EA_map <- leaflet() %>% 
+  addTiles() %>%
+  addMarkers(lng=5.384984, lat=50.927781, icon = TECHcon)%>%
+  addMarkers(lng=5.349007, lat=50.938267, icon = ITcon)%>%
+  addMarkers(lng=5.349920, lat=50.937942, icon = MADcon)%>%
+  addMarkers(lng=5.344371, lat=50.935294, icon = EDUcon)%>%
+  addMarkers(lng=5.339994, lat=50.927256, icon = HEALTHcon)
+EA_map
+
+```
